@@ -24,6 +24,8 @@ jobs:
           npm run build
 
       - uses: FirebaseExtended/action-hosting-deploy@v0
+        env: 
+          DISABLE_HTTP2: "true"
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_STUDYRECORDINGAPP2 }}
